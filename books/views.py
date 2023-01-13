@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Book
 
 
 def book(request):
@@ -9,7 +9,6 @@ def book(request):
         request,
         "index.html",
         context={
-           "book_name":bookName
         }
 
 
