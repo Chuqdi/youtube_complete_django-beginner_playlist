@@ -11,18 +11,4 @@ def index(request):
     )
 
 
-def create_book(request):
-    if request.method == "POST":
-        
-        bookForm = BookForm(request.POST)
-        if bookForm.is_valid():
-            bookForm.save()
-            return HttpResponse("Book was creates successfully")
-    else:
-        bookForm = BookForm()
-    return render(request, "create_book.html",
-    {
-        "form":bookForm
-    }
-    )
 
