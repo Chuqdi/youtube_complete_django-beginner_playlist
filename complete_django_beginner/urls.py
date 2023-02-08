@@ -1,7 +1,10 @@
 
 from django.contrib import admin
 from django.urls import path, include
-from books.views import index, create_book
+from books.views import index
+
+
+
 
 
 urlpatterns = [
