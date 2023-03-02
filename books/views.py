@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect
+
+from books.models import Book
 from .forms import BookForm
 from django.http import HttpResponse
 from django.contrib import messages
 
 
 def list_books(request):
-    return render(request, "list_books.html")
+    books = Book.objects.all().order_by("-id")
+    return render(request, "list_books.html",{"books":books})
 
 
 
