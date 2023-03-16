@@ -28,6 +28,8 @@ def create_book(request):
 
         if form.is_valid():
             form = form.save(commit=False)
+            form.creator = request.user
+            form.save()
             messages.success(request, "Book was created successfully")
 
             
