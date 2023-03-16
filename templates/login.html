@@ -22,6 +22,12 @@
                     {{ form|crispy }}
                     <button class="mt-2 btn btn-primary" type="submit">Login</button>
                 </form>
+
+                <div class="m-4">
+                    <a href="{% url 'sign_up'%}">
+                        I do not have an account
+                    </a>
+                </div>
             </div>
         </div>
 

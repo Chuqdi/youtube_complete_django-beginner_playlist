@@ -4,15 +4,19 @@ from books.models import Book
 from .forms import BookForm
 from django.http import HttpResponse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
+
+
+@login_required
 def list_books(request):
     books = Book.objects.all().order_by("-id")
     return render(request, "list_books.html",{"books":books})
 
 
 
-
+@login_required
 def create_book(request):
     # form = TestForm()
     form = BookForm()
