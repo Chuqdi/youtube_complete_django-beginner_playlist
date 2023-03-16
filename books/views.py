@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def list_books(request):
-    books = Book.objects.all().order_by("-id")
+    books = Book.objects.filter(creator=request.user).order_by("-id")
     return render(request, "list_books.html",{"books":books})
 
 
@@ -27,7 +27,7 @@ def create_book(request):
         form = BookForm(request.POST)
 
         if form.is_valid():
-            form.save()
+            form = form.save(commit=False)
             messages.success(request, "Book was created successfully")
 
             
