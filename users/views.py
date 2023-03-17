@@ -12,6 +12,6 @@ def sign_up(request):
         if form.is_valid():
             form.save()
             messages.success(request, "User Creation was successfuuly")
-            return redirect("sign_up")
+            return redirect("login")
 
     return render(request, "sign_up.html", {"form":form})

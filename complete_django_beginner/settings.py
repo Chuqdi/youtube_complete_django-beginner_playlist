@@ -132,7 +132,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -147,3 +147,10 @@ LOGIN_REDIRECT_URL="list_books"
 LOGOUT_REDIRECT_URL ="login"
 
 LOGIN_URL ="login"
+
+
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS=[
+    BASE_DIR.joinpath('static')
+]
